@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<link rel="stylesheet" href="STYLES/STYLES.CSS" >
+		<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>
+		
+		<script>
+		 var mycen= new google.maps.LatLng(12.992940,77.661630);
+
+			function initialize()
+			{
+			var mapProp = {
+			 		 center:mycen,
+			  		zoom:20,
+			  		mapTypeId:google.maps.MapTypeId.ROADMAP
+			  };
+			var map=new google.maps.Map(document.getElementById("googleMap")
+			  ,mapProp);
+			
+			var marker=new google.maps.Marker({
+			  		position:mycen,
+  					});
+
+			marker.setMap(map);
+			
+
+		var infowindow = new google.maps.InfoWindow({
+ 				 content:"Gopalan Mall"
+ 				 });
+
+				infowindow.open(map,marker);
+				}
+			google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+	</head>
+
+	<body>
+		
+		<div id="searchBox" > 
+<form>
+<input type="text" name="searchLocation" placeholder="Search Location">
+<input type="submit" value="Search" >
+</form>
+
+</div>
+<div id="googleMap" ></div>
+		
+	</body>
+
+
+
+
+
+
+
+
